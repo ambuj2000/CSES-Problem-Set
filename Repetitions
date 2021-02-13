@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long 
+ 
+int Solve(string str)
+{
+	int n=str.length(),ans=0,count=0;
+	for(int i=0; i<n-1; ++i)
+	{
+		if(str[i]==str[i+1])
+			count++;
+		else
+			count=0;
+		ans=max(ans,count);
+	}
+	return ans+1;
+}
+ 
+int main(){
+ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+#endif
+ 
+	string str;
+	cin>>str;
+	cout<<Solve(str);
+	return 0;
+}
